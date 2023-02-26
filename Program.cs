@@ -41,8 +41,15 @@ namespace Arquivos02
         
         public static string MontarLinhaNova(string[] colunas)
         {
-            var total = Convert.ToDouble(colunas[1]) * Convert.ToDouble(colunas[2]);
-            var linhaNova = colunas[0] + ";" + total;
+            string nomeProduto = colunas[0];
+
+            double preco = Convert.ToDouble(colunas[1]);
+
+            int quantidade = Convert.ToInt32(colunas[2]);
+
+            double total = preco * quantidade;
+
+            string linhaNova = nomeProduto + ";" + total;
 
             return linhaNova;
         }
